@@ -159,6 +159,11 @@ def processArchive(FrameSI):
   FrameSI.loc[(FrameSI['STATUS FINAL ESPECTRO OI'] == 'Espectro Oi Configurado')&
               ((FrameSI['CHECK HW'] == 'HW Nao Suport OI') | (FrameSI['CHECK BB MIMO'] == 'Not Suport OI')),['STATUS FINAL ESPECTRO OI']] = 'Espectro Oi Configurado(Not Suported)'
   
+  '''
+  FrameSI.loc[(FrameSI['CHECK BB MIMO'].astype(str) == 'Not Suport OI')& 
+              (FrameSI['Tem1800'].isna())& 
+              (FrameSI['productName_ALL'].str.contains('RAN Processor')),['Verificar2']] = 'Verificar2'
+  '''
   
   return FrameSI
   

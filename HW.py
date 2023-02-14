@@ -61,7 +61,8 @@ def processArchive():
 
   HW = ShortName.tratarShortNumber(HW,'NodeId')
   #HW = HW.sort_values(['SHORT'], ascending = [True])
-  HW = CountColumnItem.processArchive(HW,'productName','Baseband')
+  HW = CountColumnItem.processArchive(HW,'productName','Baseband|RAN Processor')
+  HW.rename(columns={'Baseband|RAN Processor(QTD)': 'Baseband(QTD)'}, inplace=True)
   HW = CountColumnItem.processArchive(HW,'productName','AIR')
   HW = CountColumnItem.processArchive(HW,'productName','DUS')
 

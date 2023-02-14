@@ -23,10 +23,11 @@ import B1GUtra
 import B1NR
 import HW
 import ENM
+import DUMP_3G
 
 print ('\nprocessing... ')
 inicio = timeit.default_timer()
-
+DUMP_3G.processArchive()
 
 MobileSite.processArchive()
 SI.processArchive()
@@ -60,8 +61,6 @@ DUMP_Export.processArchive()
 
 fim = timeit.default_timer()
 print ('duracao: %.2f' % ((fim - inicio)/60) + ' min') 
-
-
 
 
 
